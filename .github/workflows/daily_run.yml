@@ -22,12 +22,13 @@ jobs:
 
       - name: 필수 라이브러리 설치
         run: |
-          pip install feedparser notion-client google-genai
+          pip install feedparser notion-client google-genai requests python-dotenv
 
       - name: 스크립트 실행
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           python main.py
