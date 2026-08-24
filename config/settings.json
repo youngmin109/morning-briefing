@@ -1,0 +1,60 @@
+{
+  "news": {
+    "per_feed_limit": 8,
+    "max_articles_for_llm": 45,
+    "top_n": 7,
+    "dedup_lookback_days": 7,
+    "feeds": [
+      { "name": "데일리시큐", "region": "kr", "type": "rss", "url": "https://www.dailysecu.com/rss/allArticle.xml" },
+      { "name": "GeekNews", "region": "kr", "type": "rss", "url": "https://news.hada.io/rss" },
+      { "name": "IT·테크 (국내 종합)", "region": "kr", "type": "gnews", "query": "IT OR 테크 OR 앱 OR 서비스 출시", "per_feed_limit": 12 },
+      { "name": "인공지능", "region": "kr", "type": "gnews", "query": "인공지능 OR AI", "per_feed_limit": 10 },
+      { "name": "반도체", "region": "kr", "type": "gnews", "query": "반도체", "per_feed_limit": 8 },
+      { "name": "보안·해킹", "region": "kr", "type": "gnews", "query": "사이버보안 OR 해킹 OR 정보보호", "per_feed_limit": 10 },
+      { "name": "The Hacker News", "region": "global", "type": "rss", "url": "https://feeds.feedburner.com/TheHackersNews" },
+      { "name": "TechCrunch", "region": "global", "type": "rss", "url": "https://techcrunch.com/feed/" },
+      { "name": "Hacker News", "region": "global", "type": "hn_api", "url": "https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=10" }
+    ]
+  },
+  "market": {
+    "kr_stocks": [
+      { "code": "005930", "label": "삼성전자" },
+      { "code": "000660", "label": "SK하이닉스" },
+      { "code": "035420", "label": "NAVER" }
+    ],
+    "kr_indices": [
+      { "ticker": "^KS11", "label": "코스피" },
+      { "ticker": "^KQ11", "label": "코스닥" }
+    ],
+    "us_tickers": [
+      { "ticker": "QQQ", "label": "나스닥100 ETF" },
+      { "ticker": "AAPL", "label": "애플" },
+      { "ticker": "MSFT", "label": "마이크로소프트" },
+      { "ticker": "NVDA", "label": "엔비디아" }
+    ],
+    "fx_tickers": [
+      { "ticker": "USDKRW=X", "label": "USD/KRW" }
+    ],
+    "coins": ["KRW-BTC", "KRW-ETH", "KRW-SOL"],
+    "history_days": 5
+  },
+  "trending": {
+    "since": "daily",
+    "languages": [""],
+    "limit": 6
+  },
+  "gemini": {
+    "model": "gemini-3.6-flash",
+    "max_retries": 3,
+    "timeout_seconds": 90
+  },
+  "delivery": {
+    "discord_enabled": true,
+    "notion_enabled": true,
+    "discord_max_embeds_per_batch": 5
+  },
+  "data": {
+    "history_retention_days": 30,
+    "history_dir": "data/history"
+  }
+}

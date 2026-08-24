@@ -1,0 +1,309 @@
+{
+  "date": "2026-08-24",
+  "generated_at": "2026-08-24T15:16:27.438885+09:00",
+  "market_briefing": {
+    "headline": "삼성전자·SK하이닉스 등 반도체 대형주 약세에 코스피 급락, 코스닥은 반등",
+    "commentary": "삼성전자(-8.79%)와 SK하이닉스(-3.29%)의 급락세가 코스피 지수 하락을 주도했습니다. 반도체 업황 및 무리한 증설에 대한 시장 우려가 대형주 투심에 악영향을 미친 것으로 추정됩니다. 기술주 변동성이 커지는 상황에서 글로벌 AI 인프라 투자 지속 여부와 반도체 수급 개선 신호를 주시할 필요가 있습니다."
+  },
+  "articles": [
+    {
+      "title": "KISA, 과학기술정보통신부와 함께 양자내성암호(PQC) 실무교육 신설",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208161",
+      "source": "데일리시큐",
+      "category": "보안",
+      "importance": 5,
+      "tags": [
+        "PQC",
+        "양자암호",
+        "암호전환"
+      ],
+      "summary": [
+        "한국인터넷진흥원이 양자내성암호(PQC) 전환을 지원하기 위한 실무과정을 신설하고 교육생을 모집한다.",
+        "양자컴퓨터의 발전으로 기존 공개키 암호체계의 무력화 우려가 높아짐에 따라 이에 대한 사전 대비를 목표로 한다.",
+        "교육은 정보보호 담당자를 대상으로 양자 위협과 PQC 전환 전략 및 실무 방법론을 다룬다."
+      ],
+      "study_keywords": [
+        "PQC: 양자컴퓨터의 해독 위협에 대응할 수 있는 차세대 공개키 암호 알고리즘",
+        "공개키 암호체계: RSA, ECC 등 양자컴퓨팅 환경에서 취약해질 수 있는 기존 암호 방식"
+      ],
+      "tech_insight": "양자 컴퓨팅 시대에 대비해 기존 PKI 기반 인프라를 PQC 알고리즘으로 마이그레이션하는 암호 민첩성(Crypto-Agility) 확보가 시급하다."
+    },
+    {
+      "title": "국민건강보험공단 사칭 정밀 타깃 악성 앱 유포 포착",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208160",
+      "source": "데일리시큐",
+      "category": "보안",
+      "importance": 4,
+      "tags": [
+        "악성앱",
+        "피싱",
+        "타깃공격"
+      ],
+      "summary": [
+        "국민건강보험공단을 사칭해 안드로이드 사용자를 노린 피싱 사이트와 악성 APK가 유포되었다.",
+        "해당 악성 앱은 삼성 기기 및 한국어 언어 환경 등 특정 조건에서만 동작하도록 설계되었다.",
+        "누리랩 미노스 이그나이트 센터가 분석을 진행하고 악성 URL을 차단 조치했다."
+      ],
+      "study_keywords": [
+        "APK: 안드로이드 응용 프로그램 패키지 파일",
+        "타깃 공격: 특정 기기 환경이나 대상을 선별하여 탐지를 회피하는 고도화된 공격 방식"
+      ],
+      "tech_insight": "특정 실행 환경을 검증하여 샌드박스 탐지를 회피하는 악성코드가 늘고 있으므로 조건부 행위 기반 분석 프로세스를 강화해야 한다."
+    },
+    {
+      "title": "내 GPU 사양으로 실행 가능한 LLM을 계산해 주는 오픈소스 도구",
+      "link": "https://news.hada.io/topic?id=32834",
+      "source": "GeekNews",
+      "category": "AI",
+      "importance": 3,
+      "tags": [
+        "GPU",
+        "LLM",
+        "VRAM"
+      ],
+      "summary": [
+        "선택한 GPU 사양에 맞춰 실행 가능한 LLM 모델과 양자화 옵션을 자동 계산해 주는 도구가 공개되었다.",
+        "GPU 147종 및 주요 LLM 모델을 지원하며 예상 추론 속도와 메모리 요구량을 제시한다.",
+        "AI 인프라 자문 과정에서 반복되는 VRAM 계산 업무를 자동화하기 위해 개발되었다."
+      ],
+      "study_keywords": [
+        "VRAM: 그래픽 처리 장치 전용 메모리로 LLM 모델 파라미터 로딩에 핵심적인 자원",
+        "양자화: 모델의 가중치 정밀도를 낮춰 메모리 사용량을 줄이고 추론 속도를 높이는 기법"
+      ],
+      "tech_insight": "온프레미스나 클라우드 기반 LLM 서비스 서빙 시 메모리 병목 및 비용 최적화를 위해 양자화 레벨과 VRAM 용량을 사전 계산하는 정밀 설계가 요구된다."
+    },
+    {
+      "title": "agent.md를 활용한 LLM 생성 코드의 구조적 품질 향상 기법",
+      "link": "https://news.hada.io/topic?id=32833",
+      "source": "GeekNews",
+      "category": "AI",
+      "importance": 4,
+      "tags": [
+        "LLM",
+        "코드리뷰",
+        "프롬프트"
+      ],
+      "summary": [
+        "LLM이 생성하는 복잡한 코드가 품질 저하나 가독성 부족으로 프로덕션 적용에 어려움을 겪고 있다.",
+        "코드 리뷰 지침을 agent.md 파일에 정의하고 프롬프트에 자동 주입하여 코딩 컨벤션을 유지하도록 개선했다.",
+        "세션별로 반복되는 가이드를 표준화하여 생성된 코드의 정교함과 주석, 구조적 완성도를 확보했다."
+      ],
+      "study_keywords": [
+        "System Prompt: LLM의 역할과 응답 규칙을 지정하기 위해 지속적으로 제공되는 기초 프롬프트",
+        "코드 컨벤션: 코딩 스타일 및 작성 규칙을 통일하여 유지보수성을 높이는 가이드라인"
+      ],
+      "tech_insight": "AI 생성 코드를 개발 프로세스에 통합할 때 에이전트 규칙 파일(agent.md)을 표준 컨벤션 저장소로 관리함으로써 자동화된 코드 품질 제어가 가능하다."
+    },
+    {
+      "title": "SonicMoE를 통해 살펴보는 GPU 커널 최적화 기법",
+      "link": "https://news.hada.io/topic?id=32830",
+      "source": "GeekNews",
+      "category": "인프라",
+      "importance": 4,
+      "tags": [
+        "GPU",
+        "MoE",
+        "커널최적화"
+      ],
+      "summary": [
+        "SonicMoE 사례를 중심으로 대규모 모델 처리를 위한 효율적인 GPU 커널 설계 원리를 다룬다.",
+        "GPU 하드웨어 구조에 최적화된 연산 배치를 통해 병목 현상을 해결하는 방법을 소개한다.",
+        "MoE 아키텍처의 연산 효율을 극대화하기 위해 메모리 접근 패턴과 병렬 처리를 다룬다."
+      ],
+      "study_keywords": [
+        "MoE: 신경망의 일부 전문가 네트워크만 선택적으로 활성화하여 연산량을 줄이는 아키텍처",
+        "GPU Kernel: GPU 내부의 연산 장치에서 병렬로 실행되는 최하위 실행 코드 단위"
+      ],
+      "tech_insight": "초거대 AI 모델의 고성능 추론 및 학습을 위해 하드웨어 특성을 반영한 CUDA 커널 수준의 연산·메모리 병목 최적화 역량이 정밀 인프라 운용에 중요하다."
+    },
+    {
+      "title": "Claude Opus 5를 활용한 하드웨어 펌웨어 역공학 분석 사례",
+      "link": "https://news.hada.io/topic?id=32825",
+      "source": "GeekNews",
+      "category": "보안",
+      "importance": 4,
+      "tags": [
+        "역공학",
+        "펌웨어",
+        "임베디드"
+      ],
+      "summary": [
+        "Claude Opus 5 모델을 활용해 주변기기 5종의 펌웨어를 리버스 엔지니어링한 분석 결과가 공유되었다.",
+        "마이크 명령 셸, 웹캠 LED 조작, Wi-Fi 기반 비인증 메모리 쓰기 취약점 등이 발굴되었다.",
+        "제조사 업데이트 도구와 프로토콜 분석을 AI 기반 역공학 환경에 통합하여 수집 및 조사를 수행했다."
+      ],
+      "study_keywords": [
+        "역공학: 소프트웨어나 펌웨어의 바이너리를 분석하여 원리 및 취약점을 파악하는 기법",
+        "펌웨어: 임베디드 기기의 제어 제반을 담당하는 하드웨어 내부 고정 프로그램"
+      ],
+      "tech_insight": "AI 도구가 펌웨어 리버스 엔지니어링 프로세스를 고도화함에 따라 임베디드 장비 공급망에서의 취약점 점검 및 보안 가시성 확보가 필수가 되었다."
+    },
+    {
+      "title": "반도체 무리한 증설 압박에 대한 시장 손실 경고",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE55dUpqWWZKdDJ5eUxPZ2praDQzSkY5ZkFmbmdmZ2FIY29PWFBUV1U2RVRSTnUtZ3BkbGNQbnJoY0NXNUhOcVNSZThWZmJhVGNUNmctLWVYWjNOZw?oc=5",
+      "source": "한국경제",
+      "category": "시장",
+      "importance": 3,
+      "tags": [
+        "반도체",
+        "증설",
+        "수요예측"
+      ],
+      "summary": [
+        "경기 흐름을 고려하지 않은 무리한 반도체 설비 증설 압박이 막대한 손실로 이어질 수 있다는 전문가 경고가 제기되었다.",
+        "급변하는 글로벌 수급 상황에서 무분별한 팹 확장이 고정비 부담을 가중시킬 수 있다.",
+        "국내 주요 반도체 기업들의 전략적 자본 지출(CapEx) 조율의 중요성이 강조된다."
+      ],
+      "study_keywords": [
+        "CapEx: 기업이 미래 가치 창출 및 설비 확충을 위해 투자하는 자본적 지출",
+        "반도체 사이클: 수요와 공급 불균형으로 인해 주기적으로 발생하는 반도체 업황 변동"
+      ],
+      "tech_insight": "기술 트렌드 변화에 발맞추되, 설비 투자 확대 시 수급 예측 분석을 기반으로 클라우드 및 데이터센터 실수요 흐름을 감안한 신중한 접근이 필요하다."
+    }
+  ],
+  "market": {
+    "kr": {
+      "stocks": [
+        {
+          "label": "삼성전자",
+          "code": "005930",
+          "price": 256750,
+          "change_pct": -8.79
+        },
+        {
+          "label": "SK하이닉스",
+          "code": "000660",
+          "price": 1673000,
+          "change_pct": -3.29
+        },
+        {
+          "label": "NAVER",
+          "code": "035420",
+          "price": 223500,
+          "change_pct": 0.68
+        }
+      ],
+      "indices": [
+        {
+          "label": "코스피",
+          "ticker": "^KS11",
+          "price": 6689.57,
+          "change_pct": -3.23
+        },
+        {
+          "label": "코스닥",
+          "ticker": "^KQ11",
+          "price": 813.66,
+          "change_pct": 1.46
+        }
+      ]
+    },
+    "us": {
+      "stocks": [
+        {
+          "label": "나스닥100 ETF",
+          "ticker": "QQQ",
+          "price": 713.44,
+          "change_pct": 0.35
+        },
+        {
+          "label": "애플",
+          "ticker": "AAPL",
+          "price": 309.35,
+          "change_pct": -0.63
+        },
+        {
+          "label": "마이크로소프트",
+          "ticker": "MSFT",
+          "price": 483.24,
+          "change_pct": 0.43
+        },
+        {
+          "label": "엔비디아",
+          "ticker": "NVDA",
+          "price": 214.72,
+          "change_pct": -0.98
+        }
+      ],
+      "fx": [
+        {
+          "label": "USD/KRW",
+          "ticker": "USDKRW=X",
+          "price": 1379.75,
+          "change_pct": -0.79
+        }
+      ]
+    },
+    "crypto": [
+      {
+        "label": "비트코인",
+        "market": "KRW-BTC",
+        "price": 106045000,
+        "change_pct": -0.65
+      },
+      {
+        "label": "이더리움",
+        "market": "KRW-ETH",
+        "price": 3364000,
+        "change_pct": -0.53
+      },
+      {
+        "label": "솔라나",
+        "market": "KRW-SOL",
+        "price": 129300,
+        "change_pct": -1.3
+      }
+    ],
+    "collected_at": "2026-08-24T15:15:54.336239+09:00"
+  },
+  "trending": [
+    {
+      "repo": "openai/codex",
+      "url": "https://github.com/openai/codex",
+      "description": "Lightweight coding agent that runs in your terminal",
+      "language": "Rust",
+      "total_stars": 116015,
+      "period_stars": 2715
+    },
+    {
+      "repo": "freestylefly/awesome-gpt-image-2",
+      "url": "https://github.com/freestylefly/awesome-gpt-image-2",
+      "description": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，470+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
+      "language": "JavaScript",
+      "total_stars": 13790,
+      "period_stars": 401
+    },
+    {
+      "repo": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "total_stars": 234268,
+      "period_stars": 2447
+    },
+    {
+      "repo": "basecamp/omarchy",
+      "url": "https://github.com/basecamp/omarchy",
+      "description": "Beautiful, Modern & Opinionated Linux",
+      "language": "Shell",
+      "total_stars": 29394,
+      "period_stars": 750
+    },
+    {
+      "repo": "AprilNEA/OpenLogi",
+      "url": "https://github.com/AprilNEA/OpenLogi",
+      "description": "⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry.",
+      "language": "Rust",
+      "total_stars": 15183,
+      "period_stars": 1009
+    },
+    {
+      "repo": "block/buzz",
+      "url": "https://github.com/block/buzz",
+      "description": "A hive mind communication platform",
+      "language": "Rust",
+      "total_stars": 30231,
+      "period_stars": 410
+    }
+  ]
+}

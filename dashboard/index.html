@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>boan-news · 오늘의 IT 브리핑</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div>
+        <h1>🛡️ boan-news</h1>
+        <p class="subtitle">매일 아침 8시, IT·보안 뉴스 + 시장 브리핑</p>
+      </div>
+      <nav id="archive-nav" class="archive-nav" aria-label="날짜별 아카이브"></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="loading" class="loading">불러오는 중…</section>
+
+    <section id="market-section" class="section hidden">
+      <h2>📈 시장 스냅샷 <span class="muted" id="market-time"></span></h2>
+      <div id="market-grid" class="market-grid"></div>
+      <div id="market-briefing" class="callout hidden"></div>
+    </section>
+
+    <section id="news-section" class="section hidden">
+      <h2>📰 오늘의 브리핑</h2>
+      <div id="filters" class="filters"></div>
+      <div id="articles" class="article-grid"></div>
+    </section>
+
+    <section id="trending-section" class="section hidden">
+      <h2>🔥 GitHub Trending</h2>
+      <ol id="trending-list" class="trending-list"></ol>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>GitHub Actions로 매일 KST 08:00 자동 생성 · 데이터: RSS/공개 API · 분석: Gemini</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

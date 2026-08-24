@@ -7,9 +7,16 @@ on:
     - cron: '0 23 * * *'
   workflow_dispatch: # Actions 탭에서 수동 실행 버튼 활성화
 
+concurrency:
+  group: daily-news-run
+  cancel-in-progress: false
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write # 수집 데이터를 저장소에 커밋하기 위해 필요
 
     steps:
       - name: 저장소 체크아웃
@@ -19,16 +26,54 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
       - name: 필수 라이브러리 설치
-        run: |
-          pip install feedparser notion-client google-genai requests python-dotenv
+        run: pip install -r requirements.txt
 
-      - name: 스크립트 실행
+      - name: 파이프라인 실행 (수집 → 분석 → 전달)
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python -m src.main
+
+      - name: 수집 데이터 커밋 & 푸시
         run: |
-          python main.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "변경된 데이터가 없습니다."
+          else
+            git commit -m "data: $(TZ=Asia/Seoul date +%Y-%m-%d) 모닝 브리핑"
+            git push
+          fi
+
+      - name: 대시보드 사이트 구성 (_site)
+        run: |
+          mkdir -p _site/data
+          cp dashboard/* _site/
+          cp data/latest.json data/index.json _site/data/
+          [ -d data/history ] && cp -r data/history _site/data/history || true
+
+      - name: Pages 아티팩트 업로드
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy-pages:
+    needs: run-bot
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Pages 배포
+        id: deployment
+        uses: actions/deploy-pages@v4

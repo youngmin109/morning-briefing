@@ -1,0 +1,9 @@
+feedparser>=6.0,<7
+requests>=2.31,<3
+python-dotenv>=1.0,<2
+notion-client>=2.2,<3
+google-genai>=1.0,<2
+pykrx>=1.0.40,<2
+yfinance>=0.2.40
+beautifulsoup4>=4.12,<5
+lxml>=5.0
