@@ -1,164 +1,164 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T15:46:43.439174+09:00",
+  "generated_at": "2026-08-24T18:04:25.751301+09:00",
   "market_briefing": {
-    "headline": "삼성전자 등 대형 반도체주 약세로 코스피 급락, 코스닥은 소폭 상승 마감",
-    "commentary": "반도체 원가 상승(칩플레이션)과 증설 부담 우려가 겹치며 대형 반도체 종목을 중심으로 외국인과 기관의 매도세가 출회되어 코스피 지수가 급락했습니다. 반면 코스닥은 중소형 IT 및 기술주 중심으로 매수세가 유입되며 소폭 반등 마감했습니다. 향후 글로벌 빅테크의 AI 인프라 투자 지속 여부와 반도체 공급망 원가 추이를 지속 모니터링할 필요가 있습니다."
+    "headline": "대형 반도체주 급락에 코스피 하락 마감, 코스닥은 소폭 상승",
+    "commentary": "삼성전자(-8.70%)와 SK하이닉스(-3.41%) 등 주요 반도체 종목이 큰 폭으로 하락하면서 코스피 지수를 크게 끌어내렸습니다. 시장 일각에서 반도체 과잉 증설 및 경기 불확실성에 대한 우려가 제기된 점이 투자 심리에 영향을 미친 것으로 풀이됩니다. 향후 AI 인프라 투자 수요의 지속 여부와 외환 시장 안정화 추이를 주요하게 체크할 필요가 있습니다."
   },
   "articles": [
     {
-      "title": "Anthropic 최상위 AI 모델, 저렴한 도구 성장 속에 기업 고객 확보 고전",
-      "link": "https://news.hada.io/topic?id=32826",
+      "title": "경기도교육청, 2,500여 개 홈페이지 개인정보 필터링 일괄 적용",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208171",
+      "source": "데일리시큐",
+      "category": "보안",
+      "importance": 4,
+      "tags": [
+        "개인정보보호",
+        "필터링",
+        "내부망보안"
+      ],
+      "summary": [
+        "경기도교육청이 본청 및 도내 학교 포함 2,500여 개 홈페이지에 개인정보 유출 차단 체계를 구축했다.",
+        "엘세븐시큐리티 솔루션을 도입해 외부망뿐만 아니라 내부망 시스템까지 검사 범위를 확장했다.",
+        "게시판 운영 방식의 파편화와 담당자 순환 근무에 따른 개인정보 노출 위험성을 크게 줄이고자 했다."
+      ],
+      "study_keywords": [
+        "개인정보 필터링: 웹 게시물이나 첨부파일 업로드 시 주민등록번호, 연락처 등 민감 정보 포함 여부를 실시간 탐지 및 차단하는 기술",
+        "내부망 통합 검사: 외부 노출 시스템 외에도 사내 업무용 및 내부망 시스템까지 보안 스캐닝 범위를 넓히는 검사 방식"
+      ],
+      "tech_insight": "다수의 파편화된 웹 서비스 운영 환경에서는 인라인 방식의 필터링 솔루션과 함께 CI/CD 파이프라인 상에서 정적 분석을 병행하여 개인정보 유출 방지 및 보안 사각지대를 최소화해야 합니다."
+    },
+    {
+      "title": "Show GN: Preflight - 바이브코딩 앱을 위한 배포 전 보안 점검 도구",
+      "link": "https://news.hada.io/topic?id=32840",
+      "source": "GeekNews",
+      "category": "보안",
+      "importance": 4,
+      "tags": [
+        "Preflight",
+        "DevSecOps",
+        "바이브코딩"
+      ],
+      "summary": [
+        "AI 기반 바이브코딩으로 작성된 앱의 배포 직전 보안 점검을 자동화하는 Preflight 도구가 공개되었다.",
+        "개발자가 놓치기 쉬운 필수 보안 항목과 설정 오동작을 배포 전 단계에서 선제 검증한다.",
+        "반복적이고 놓치기 쉬운 보안 점검 절차를 자동화된 파이프라인으로 흡수하는 중요성을 강조한다."
+      ],
+      "study_keywords": [
+        "바이브코딩(Vibe Coding): 자연어나 AI 프롬프트 중심으로 신속하게 코드를 생성하여 개발하는 방식",
+        "Preflight Check: 애플리케이션이나 시스템을 프로덕션 환경에 배포하기 전에 수행하는 최종 정상 및 보안 점검"
+      ],
+      "tech_insight": "AI 자동 생성 코드는 신속한 개발을 가능하게 하지만 잠재적 취약점을 포함할 수 있으므로, Git hook이나 CI 배포 전 단계에 시크릿 스캐닝 및 보안 점검 도구를 필수로 연동해야 합니다."
+    },
+    {
+      "title": "Show GN: 내 GPU로 어떤 LLM을 돌릴 수 있는지 계산해주는 오픈소스 도구",
+      "link": "https://news.hada.io/topic?id=32834",
       "source": "GeekNews",
       "category": "AI",
       "importance": 4,
       "tags": [
-        "Anthropic",
+        "GPU",
         "LLM",
-        "비용최적화"
+        "VRAM계산기"
       ],
       "summary": [
-        "미국 기업들의 Anthropic 지출 중 최상위 모델 Fable 5가 차지하는 비중이 출시 두 달 후에도 11% 수준에 머물렀습니다.",
-        "과거 무조건 가장 강력한 모델을 선택하던 기업들의 도입 패턴이 높은 API 비용 부담으로 깨지고 있습니다.",
-        "대부분의 단순 과업과 일반 업무는 하위 모델로도 충분히 처리 가능하다는 인식이 확산되는 추세입니다."
+        "보유한 GPU 스펙에 따라 실행 가능한 LLM 모델, 양자화 수준, 예상 추론 속도를 계산해 주는 도구가 개발되었다.",
+        "총 147종의 GPU 스펙 및 모델 파라미터 구조를 바탕으로 VRAM 소요량을 자동 산출한다.",
+        "AI 인프라 구축 및 모델 선정을 위한 사전 견적 산출 시 손쉬운 오버헤드 예측을 지원한다."
       ],
       "study_keywords": [
-        "Model Routing: 요청 난이도에 따라 비용과 성능이 최적화된 LLM으로 쿼리를 분산하는 기술",
-        "LLMOps: 대규모 언어 모델의 배포, 모니터링, 비용 추적을 효율화하는 운영 체계"
+        "VRAM Footprint: LLM 모델 파라미터, 컨텍스트 길이, KV 캐시 등이 GPU 메모리 상에서 차지하는 물리적 용량",
+        "양자화(Quantization): 모델의 가중치 정밀도(FP16, INT8, INT4 등)를 낮추어 메모리 사용량을 줄이고 추론 속도를 향상시키는 기법"
       ],
-      "tech_insight": "엔지니어는 단일 고성능 AI 모델에 의존하기보다, 작업 복잡도별 모델 라우팅 체계 및 캐싱 레이어를 구축하여 API 비용을 최적화해야 합니다."
+      "tech_insight": "LLM 서빙 인프라 설계 시 모델의 파라미터 크기뿐만 아니라 KV 캐시와 컨텍스트 길이에 따른 VRAM 변동 폭을 사전에 정확히 계산해야 메모리 부족(OOM) 장애를 예방할 수 있습니다."
     },
     {
-      "title": "“사람 1명당 AI 에이전트 79개”… 자율 동작 증가에 기업 보안 비상",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBhSkZBeW9GdGM2WGY4d3lOQW1XLTZkQzQycU1hWENsT08yNzk4VHpJVDhYT0pDQVg3enl0Z2UxVnA1SzZuQm5FQkpfOXlwZw?oc=5",
-      "source": "전자신문",
-      "category": "보안",
-      "importance": 5,
-      "tags": [
-        "AI에이전트",
-        "Shadow AI",
-        "권한관리"
-      ],
-      "summary": [
-        "기업 내 임직원 1명당 사용하거나 연동되는 AI 에이전트 수량이 폭발적으로 늘어나고 있습니다.",
-        "자율적으로 과업을 수행하는 에이전트의 특성상 과도한 데이터 접근 권한 및 유출 위험이 심화되었습니다.",
-        "보안 부서의 통제를 벗어난 Shadow AI 에이전트를 식별하고 중앙 관제할 거버넌스 구축이 시급합니다."
-      ],
-      "study_keywords": [
-        "AI Agent: 스스로 목표를 설정하고 도구를 호출해 업무를 자동 수행하는 시스템",
-        "Shadow AI: 중앙 IT 및 보안 통제 없이 사적으로 업무에 도입된 AI 도구 및 서비스"
-      ],
-      "tech_insight": "AI 에이전트에 필요한 최소 권한 원칙(Least Privilege)을 적용하고, API 키 및 토큰 발급에 대한 엄격한 IAM 정책 모니터링을 강화해야 합니다."
-    },
-    {
-      "title": "2030년 글로벌 AI 데이터센터 투자 4,140조원 전망… 빅테크 중심 인프라 확대",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1NRmk5XzVsQ2hOX0xsN0gzdG92R2pxVlI0OHktclp0NE8yWFhPY0JKd2FEM2hSSnJlVm12cEVuOXpTbW9qTmhXaEowVnhqd2JLMVk1UXF3?oc=5",
-      "source": "지디넷코리아",
-      "category": "클라우드",
+      "title": "agent.md로 LLM 생성 코드의 품질 높이기",
+      "link": "https://news.hada.io/topic?id=32833",
+      "source": "GeekNews",
+      "category": "AI",
       "importance": 4,
       "tags": [
-        "데이터센터",
-        "클라우드",
-        "전력인프라"
+        "agent.md",
+        "LLM",
+        "코드리뷰"
       ],
       "summary": [
-        "2030년까지 글로벌 AI 데이터센터 투자 규모가 약 4,140조 원에 달하며 폭발적 성장을 이어갈 전망입니다.",
-        "글로벌 빅테크 기업들이 초거대 AI 모델 학습 및 추론을 위한 컴퓨팅 인프라 확보 경쟁을 주도하고 있습니다.",
-        "데이터센터 전력 수급 문제와 고밀도 발열을 해결하기 위한 차세대 냉각 기술 도입이 핵심 과제로 떠올랐습니다."
+        "LLM이 생성하는 코드의 품질 저하나 구조적 문제를 방지하기 위해 컨텍스트 파일(agent.md)을 활용하는 기법이 제시되었다.",
+        "반복해서 지적되던 코드 리뷰 지침과 코딩 컨벤션을 명시하여 프롬프트에 자동 주입하도록 구성했다.",
+        "프로덕션 적용이 가능한 고품질 코드 생산 비율을 대폭 끌어올리는 효과를 확인했다."
       ],
       "study_keywords": [
-        "PUE: 데이터센터 총 전력 사용량을 IT 장비 소비 전력으로 나눈 에너지 효율 지표",
-        "Liquid Cooling: 고성능 GPU 서버의 고열을 식히기 위해 액체 냉매를 직접 순환시키는 냉각 방식"
+        "Context Injection: LLM 프롬프트에 조직 내 표준 컨벤션이나 시스템 지침 문서를 함께 제공해 응답 품질을 제어하는 기법",
+        "Agentic Workflow: AI 자율 에이전트가 사전 정의된 규칙 및 도구를 참조하여 일관된 작업을 수행하도록 돕는 작업 절차"
       ],
-      "tech_insight": "고밀도 AI 워크로드 수용을 위해 데이터센터 설계 단계부터 액체 냉각 아키텍처와 지속 가능한 전력 인프라 기획을 병행해야 합니다."
+      "tech_insight": "개발팀의 코딩 스타일 가이드와 보안 규칙을 agent.md와 같은 컨텍스트 파일로 표준화하고 repository에 저장해두면, AI 보조 도구 도입 시 발생할 수 있는 리팩토링 비용을 대폭 줄일 수 있습니다."
     },
     {
-      "title": "SK쉴더스-엘림넷, 의료기관 사이버보안 및 개인정보보호 통합 서비스 추진",
-      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208165",
+      "title": "메가존클라우드-핑거, 금융 AI 전환 위해 300억 원 상호 투자",
+      "link": "https://www.dailysecu.com/news/articleView.html?idxno=208168",
       "source": "데일리시큐",
+      "category": "클라우드",
+      "importance": 3,
+      "tags": [
+        "클라우드",
+        "금융AX",
+        "애플리케이션현대화"
+      ],
+      "summary": [
+        "메가존클라우드와 핑거가 금융권 AI 전환(AX) 사업을 본격화하기 위해 전략적 파트너십 및 300억 원 상호 투자를 단행했다.",
+        "금융권의 AI 규제 완화 흐름에 발맞추어 애플리케이션 현대화와 데이터 전환 시장을 공동 공략한다.",
+        "클라우드 인프라 노하우와 금융 IT 애플리케이션 개발 전문성을 결합해 시너지를 도모한다."
+      ],
+      "study_keywords": [
+        "금융 AX(AI Transformation): 금융 서비스 및 내부 업무 프로세스 전반에 AI 및 머신러닝 기술을 통합하여 효율화하는 과정",
+        "애플리케이션 현대화(Application Modernization): 기존 레거시 시스템을 클라우드 네이티브 및 마이크로서비스 아키텍처(MSA) 구조로 전환하는 작업"
+      ],
+      "tech_insight": "금융권 AI 도입 시에는 데이터 보안 및 컴플라이언스 기준 준수가 핵심이므로, 온프레미스 연동 및 하이브리드 클라우드 형태의 AI 데이터 파이프라인 설계를 최우선 고려해야 합니다."
+    },
+    {
+      "title": "Google Workspace가 내 도메인을 이메일 제공업체로 오인함",
+      "link": "https://news.hada.io/topic?id=32837",
+      "source": "GeekNews",
       "category": "네트워크",
       "importance": 3,
       "tags": [
-        "의료보안",
-        "관제서비스",
-        "ZeroTrust"
+        "GoogleWorkspace",
+        "DNS",
+        "정규식오류"
       ],
       "summary": [
-        "SK쉴더스와 엘림넷이 협력하여 급증하는 의료기관 대상 랜섬웨어 및 사이버 위협에 대응합니다.",
-        "국내 의료기관 침해사고가 최근 4년간 약 3.9배 증가하여 진료 차질과 민감정보 유출 우려가 커졌습니다.",
-        "24시간 보안 관제와 통합 인프라 구축을 통해 의료 현장의 선제적 보안 체계를 제공합니다."
+        "정상 기업 도메인이 Google Workspace 가입 처리 과정에서 이메일 서비스 제공업체 도메인으로 오인되는 문제가 보고되었다.",
+        "가입 페이지 로직 내 과도하게 넓은 정규식 검증 규칙(`web..*`)이 특정 형태 도메인을 모두 차단한 원인이다.",
+        "웹 애플리케이션 내 도메인 및 입력값 검증 로직 구현 시 엄격한 패턴 설계의 중요성을 일깨워 준다."
       ],
       "study_keywords": [
-        "MSSP: 기업의 보안 인프라 구축 및 위협 관제 운영을 위탁 수행하는 전문 보안 서비스",
-        "Zero Trust: 내/외부 네트워크의 모든 접근 요청을 기본적으로 신뢰하지 않고 검증하는 보안 모델"
+        "Regex Overmatching: 정규표현식이 의도한 범위보다 넓은 문자열 패턴과 일치하여 예기치 않은 오탐을 발생하는 현상",
+        "Input Validation: 외부 입력 데이터나 도메인 명칭이 시스템 기준에 적합한지 검증하는 보안 및 안정성 검사"
       ],
-      "tech_insight": "의료 정보 시스템은 서비스 연속성이 필수적이므로, 가용성을 보장하는 망분리 아키텍처와 통합 트래픽 감시 모니터링을 실현해야 합니다."
+      "tech_insight": "외부 서비스 및 입력값 검증 시 정규식에 의존하기보다 명확한 허용 목록(Allowlist) 또는 신뢰할 수 있는 도메인 레지스트리 API를 검증 단계에 활용하는 것이 안전합니다."
     },
     {
-      "title": "Emacs 32, 픽셀 버퍼 직접 제어하는 새 이미지 기능 Canvas 병합",
-      "link": "https://news.hada.io/topic?id=32827",
-      "source": "GeekNews",
-      "category": "인프라",
-      "importance": 3,
-      "tags": [
-        "Emacs",
-        "PixelBuffer",
-        "메모리관리"
-      ],
-      "summary": [
-        "8개월간 개발된 Canvas 기능이 GNU Emacs 코어에 병합되어 Emacs 32부터 정식 지원됩니다.",
-        "이미지 데이터를 문자열로 변환해 전달하던 기존 방식에서 픽셀 버퍼를 직접 조작하는 방식으로 개선되었습니다.",
-        "동적 모듈 및 C API와의 호환성을 강화하여 렌더링 성능과 자원 효율성을 크게 높였습니다."
-      ],
-      "study_keywords": [
-        "Pixel Buffer: 화면에 표시할 그래픽 픽셀 데이터를 연속된 메모리 영역에 직접 배치하는 버퍼",
-        "Dynamic Module: 런타임에 에디터나 엔진에 동적으로 로드되어 기능을 확장하는 C/C++ 기반 모듈"
-      ],
-      "tech_insight": "저수준 메모리 버퍼 조작 방식을 활용하면 개발 툴이나 개발자 CLI 환경 구축 시 자원 소비를 극소화하고 그래픽 처리 속도를 대폭 개선할 수 있습니다."
-    },
-    {
-      "title": "칩플레이션 여파, 반도체 핵심 원판 ‘실리콘 웨이퍼’ 가격 상승세",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBZVExOY0hsSGRqY1QxaHc5cWN2ZFlQYXdnaVJ1U2xiRWNkUkt4Zm9ycHVuWmE4d2VfTmJ5Y1dXMkpNdmVjRW10SkhJSC1xdms?oc=5",
-      "source": "v.daum.net",
+      "title": "\"경기 고려 없는 반도체 증설 압박, 막대한 손실 감내해야 할 수도\"",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOc09WazVGWTI4NkNwSC0wSGplR2QzREZKN3U1Yk81c1VRZG1iYjZHT0RkakJobkFJODRMdEtOcDBhdzFSS2lySGVPMG5NVXN5THJTNUdzWC02cG1vVmhjWHZYLVBwUWR3WVB6a0xnUUFZbXZaOW5XZkh1RWxMd2laTg?oc=5",
+      "source": "조선일보",
       "category": "시장",
       "importance": 4,
       "tags": [
-        "칩플레이션",
-        "웨이퍼",
-        "인프라비용"
+        "반도체",
+        "증설리스크",
+        "공급망"
       ],
       "summary": [
-        "반도체 집적회로의 기초 재료인 실리콘 웨이퍼 공급가 상승으로 칩플레이션이 가속화되고 있습니다.",
-        "원자재 가격 인상은 서버, 가속기, 네트워크 장비 등 제반 IT 하드웨어의 생산 단가 상승으로 직결됩니다.",
-        "기업들의 하드웨어 도입 비용 부담이 증가함에 따라 자원 효율화 및 클라우드 자원 최적화 압박이 심화될 전망입니다."
+        "글로벌 경제 상황을 고려하지 않은 무리한 반도체 설비 증설이 과잉 공급과 막대한 손실로 이어질 수 있다는 경고가 제기되었다.",
+        "각국의 반도체 자국화 정책 및 증설 압박이 기업의 재무적 부담과 수급 불균형 위험을 증대시키고 있다.",
+        "반도체 사이클의 변동성에 대비한 리스크 관리와 시장 수요에 맞춘 신중한 투자 집행의 필요성이 강조된다."
       ],
       "study_keywords": [
-        "Chipflation: 반도체 원자재 및 공급망 차질로 인해 IT 장비와 부품 가격이 지속 인상되는 현상",
-        "Silicon Wafer: 고순도 실리콘 결정 기둥을 얇게 썰어 반도체 회로를 형성하는 원형 기판"
+        "반도체 칩 사이클(Semiconductor Cycle): 반도체 시장의 수급 불균형에 의해 정기적으로 반복되는 호황과 불황의 주기",
+        "CAPEX(Capital Expenditure): 설비투자 비용으로, 반도체 제조 기업이 신규 팹(Fab) 건설 및 장비 도입에 지출하는 자본적 지출"
       ],
-      "tech_insight": "하드웨어 신규 조달 단가 상승에 대비해 기존 온프레미스 장비의 가상화 집약도를 높이고 FinOps 기반 자원 최적화를 선제적으로 추진해야 합니다."
-    },
-    {
-      "title": "데이터 넘어 물리·수학 원리 학습하는 차세대 AI 개발 본격화",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9vQl9UekdmRHNtY2lrVmRxUnc1bk41T2p6eldudVF2THZxVVBlSGsyUmlEUklWTVhnR1hMaVFUeHExQWRNcVZJZUhDemZSbGNuRUhjYg?oc=5",
-      "source": "동아사이언스",
-      "category": "AI",
-      "importance": 4,
-      "tags": [
-        "PINN",
-        "차세대AI",
-        "물리모델링"
-      ],
-      "summary": [
-        "단순 패턴 데이터 학습의 한계를 넘어 자연계의 물리 법칙과 수학 원리를 직접 내재화하는 차세대 AI 연구가 가속화됩니다.",
-        "기존 생성형 AI의 한계인 블랙박스 특성과 환각(Hallucination) 현상을 원리 기반 검증으로 극복하려는 차원입니다.",
-        "공학 시뮬레이션, 신소재 개발, 정밀 제어 등 높은 신뢰성을 요구하는 공학 산업 전반에 적용될 예정입니다."
-      ],
-      "study_keywords": [
-        "PINN: 편미분 방정식 등 물리 법칙을 손실 함수에 결합하여 학습시키는 인공신경망 아키텍처",
-        "Scientific AI: 자연과학적 제약 조건을 수용하여 예측 정확도와 설명 가능성을 높인 AI 시스템"
-      ],
-      "tech_insight": "물리적 도메인 지식(Physics Constraints)을 모델의 Loss Function에 직접 반영함으로써 시뮬레이션 및 제어 시스템의 안전성을 대폭 제고할 수 있습니다."
+      "tech_insight": "인프라 엔지니어는 반도체 수급 및 CAPEX 변동성으로 인한 서버/하드웨어 수급 지연 가능성에 대비해 장기 인프라 조달 계획과 유연한 멀티 클라우드 리소스 확장 전략을 수립해야 합니다."
     }
   ],
   "market": {
@@ -187,14 +187,14 @@
         {
           "label": "코스피",
           "ticker": "^KS11",
-          "price": 6717.19,
-          "change_pct": -2.83
+          "price": 6696.96,
+          "change_pct": -3.12
         },
         {
           "label": "코스닥",
           "ticker": "^KQ11",
-          "price": 813.56,
-          "change_pct": 1.45
+          "price": 813.33,
+          "change_pct": 1.42
         }
       ]
     },
@@ -229,8 +229,8 @@
         {
           "label": "USD/KRW",
           "ticker": "USDKRW=X",
-          "price": 1380.93,
-          "change_pct": -0.71
+          "price": 1383.39,
+          "change_pct": -0.53
         }
       ]
     },
@@ -238,23 +238,23 @@
       {
         "label": "비트코인",
         "market": "KRW-BTC",
-        "price": 106050000,
-        "change_pct": -0.64
+        "price": 106094000,
+        "change_pct": -0.6
       },
       {
         "label": "이더리움",
         "market": "KRW-ETH",
-        "price": 3356000,
-        "change_pct": -0.77
+        "price": 3382000,
+        "change_pct": 0
       },
       {
         "label": "솔라나",
         "market": "KRW-SOL",
-        "price": 129000,
-        "change_pct": -1.53
+        "price": 129600,
+        "change_pct": -1.07
       }
     ],
-    "collected_at": "2026-08-24T15:46:06.906796+09:00"
+    "collected_at": "2026-08-24T18:03:52.748762+09:00"
   },
   "trending": [
     {
@@ -262,15 +262,15 @@
       "url": "https://github.com/openai/codex",
       "description": "Lightweight coding agent that runs in your terminal",
       "language": "Rust",
-      "total_stars": 116110,
+      "total_stars": 116424,
       "period_stars": 2715
     },
     {
       "repo": "freestylefly/awesome-gpt-image-2",
       "url": "https://github.com/freestylefly/awesome-gpt-image-2",
-      "description": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，470+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
+      "description": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
       "language": "JavaScript",
-      "total_stars": 13919,
+      "total_stars": 14402,
       "period_stars": 401
     },
     {
@@ -278,7 +278,7 @@
       "url": "https://github.com/mattpocock/skills",
       "description": "Skills for Real Engineers. Straight from my .agents directory.",
       "language": "Shell",
-      "total_stars": 234313,
+      "total_stars": 234569,
       "period_stars": 2447
     },
     {
@@ -286,7 +286,7 @@
       "url": "https://github.com/basecamp/omarchy",
       "description": "Beautiful, Modern & Opinionated Linux",
       "language": "Shell",
-      "total_stars": 29419,
+      "total_stars": 29536,
       "period_stars": 750
     },
     {
@@ -294,7 +294,7 @@
       "url": "https://github.com/AprilNEA/OpenLogi",
       "description": "⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry.",
       "language": "Rust",
-      "total_stars": 15207,
+      "total_stars": 15330,
       "period_stars": 1009
     },
     {
@@ -302,7 +302,7 @@
       "url": "https://github.com/block/buzz",
       "description": "A hive mind communication platform",
       "language": "Rust",
-      "total_stars": 30252,
+      "total_stars": 30314,
       "period_stars": 410
     }
   ]
