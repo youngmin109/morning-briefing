@@ -35,6 +35,10 @@ h1 { font-size: 1.5rem; letter-spacing: -.02em; }
 
 .section { margin: 28px 0; }
 .section h2 { font-size: 1.15rem; margin-bottom: 14px; }
+
+.quote-box { max-width: 720px; margin: 0 auto; text-align: center; padding: 18px 8px; }
+.quote-text { font-size: 1.05rem; font-style: italic; line-height: 1.7; word-break: keep-all; }
+.quote-author { margin-top: 8px; color: var(--muted); font-size: .85rem; }
 .muted { color: var(--muted); font-size: .8rem; font-weight: 400; }
 .hidden { display: none !important; }
 .loading { text-align: center; color: var(--muted); padding: 80px 0; }

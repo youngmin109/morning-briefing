@@ -32,6 +32,34 @@ function marketCard(item, unit) {
   </div>`;
 }
 
+/* 오늘의 명언 — 날짜를 시드로 하루 한 개가 고정되어 매일 바뀜 */
+const QUOTES = [
+  { text: "우리를 죽이지 못하는 것은 우리를 더 강하게 만든다.", author: "니체" },
+  { text: "음악이 없는 삶은 잘못된 삶일 것이다.", author: "니체" },
+  { text: "네가 심연을 오래 들여다볼수록, 심연 또한 너를 들여다본다.", author: "니체" },
+  { text: "살아야 할 '왜'를 아는 사람은 그 어떤 '어떻게'도 견딜 수 있다.", author: "니체" },
+  { text: "사실은 없다. 해석만 있을 뿐이다.", author: "니체" },
+  { text: "춤추는 별을 낳으려면, 자기 안에 여전히 혼돈이 있어야 한다.", author: "니체" },
+  { text: "우리가 삶을 사랑하는 것은 살아온 데 익숙해서가 아니라, 사랑하는 데 익숙하기 때문이다.", author: "니체" },
+  { text: "불행한 결혼을 만드는 것은 사랑의 부족이 아니라 우정의 부족이다.", author: "니체" },
+  { text: "결혼할 때 스스로에게 물어라. 늙어서까지 이 사람과 대화가 잘 통할 것 같은가?", author: "니체" },
+  { text: "성숙함이란 어린아이가 놀 때 가지는 진지함을 다시 발견하는 것이다.", author: "니체" },
+  { text: "모든 문제는 대인관계의 문제다.", author: "알프레드 아들러" },
+  { text: "비판하지 말고, 원망하지 말고, 불평하지 말라.", author: "데일 카네기" },
+  { text: "사람의 이름은 그 사람에게 세상의 어떤 말보다 달콤하고 중요한 소리다.", author: "데일 카네기" },
+  { text: "내가 만나는 모든 사람은 어떤 면에서 나보다 뛰어나다. 나는 그 점을 그들에게서 배운다.", author: "랄프 왈도 에머슨" },
+  { text: "사랑은 서로를 응시하는 것이 아니라, 함께 같은 방향을 바라보는 것이다.", author: "생텍쥐페리" },
+  { text: "남에게 대접받고 싶은 대로 남을 대접하지 마라. 사람의 취향은 저마다 다르다.", author: "조지 버나드 쇼" },
+  { text: "자기 기분을 전환하는 가장 빠른 길은, 다른 누군가의 기분을 전환시켜주려 애쓰는 것이다.", author: "마크 트웨인" },
+];
+
+function renderQuote(data) {
+  const dateStr = String(data?.date || new Date().toISOString().slice(0, 10));
+  const q = QUOTES[[...dateStr].reduce((a, c) => a + c.charCodeAt(0), 0) % QUOTES.length];
+  $("#quote-text").textContent = `❝ ${q.text} ❞`;
+  $("#quote-author").textContent = `— ${q.author}`;
+}
+
 function renderMarket(data) {
   const m = data.market || {};
   const cards = [];
@@ -116,6 +144,7 @@ async function loadDate(dateStr) {
     document.querySelectorAll("#archive-nav button").forEach((b) =>
       b.classList.toggle("active", b.dataset.date === (dateStr || ""))
     );
+    renderQuote(data);
     renderMarket(data);
     renderArticles(data);
     renderTrending(data);
