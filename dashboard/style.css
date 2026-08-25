@@ -50,6 +50,7 @@ h1 { font-size: 1.5rem; letter-spacing: -.02em; }
 .market-card .change { font-size: .82rem; font-weight: 600; }
 .change.up { color: var(--up); }
 .change.down { color: var(--down); }
+.change.flat { color: var(--muted); }
 
 .callout {
   margin-top: 16px; padding: 16px 18px; border-radius: var(--radius);

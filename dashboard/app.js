@@ -4,7 +4,21 @@
 const $ = (sel) => document.querySelector(sel);
 const fmtNum = (n) => Number(n).toLocaleString("ko-KR");
 
-function changeClass(pct) { return pct > 0 ? "up" : pct < 0 ? "down" : "down"; }
+/* 피드/LLM 응답은 신뢰할 수 없는 입력이므로 innerHTML 주입 전 반드시 이스케이프 */
+function esc(s) {
+  return String(s ?? "")
+    .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;").replaceAll("'", "&#39;");
+}
+function safeUrl(u) {
+  try {
+    return /^https?:$/.test(new URL(String(u ?? "")).protocol) ? u : "#";
+  } catch { return "#"; }
+}
+const starsOf = (v) => "★".repeat(Math.min(5, Math.max(1, Math.floor(Number(v) || 3)))) +
+                      "☆".repeat(5 - Math.min(5, Math.max(1, Math.floor(Number(v) || 3))));
+
+function changeClass(pct) { return pct > 0 ? "up" : pct < 0 ? "down" : "flat"; }
 function changeText(pct) {
   const arrow = pct > 0 ? "▲" : pct < 0 ? "▼" : "─";
   return `${arrow} ${pct > 0 ? "+" : ""}${pct.toFixed(2)}%`;
@@ -12,7 +26,7 @@ function changeText(pct) {
 
 function marketCard(item, unit) {
   return `<div class="market-card">
-    <div class="label">${item.label}</div>
+    <div class="label">${esc(item.label)}</div>
     <div class="price">${fmtNum(item.price)}${unit}</div>
     <div class="change ${changeClass(item.change_pct)}">${changeText(item.change_pct)}</div>
   </div>`;
@@ -35,7 +49,7 @@ function renderMarket(data) {
   if (mb.headline || mb.commentary) {
     $("#market-briefing").classList.remove("hidden");
     $("#market-briefing").innerHTML =
-      `<div class="headline">🧭 ${mb.headline || ""}</div><p>${mb.commentary || ""}</p>`;
+      `<div class="headline">🧭 ${esc(mb.headline || "")}</div><p>${esc(mb.commentary || "")}</p>`;
   }
   $("#market-section").classList.remove("hidden");
 }
@@ -45,7 +59,7 @@ let currentFilter = "전체";
 function renderFilters(articles) {
   const cats = ["전체", ...new Set(articles.map((a) => a.category))];
   $("#filters").innerHTML = cats
-    .map((c) => `<button data-cat="${c}" class="${c === currentFilter ? "active" : ""}">${c}</button>`)
+    .map((c) => `<button data-cat="${esc(c)}" class="${c === currentFilter ? "active" : ""}">${esc(c)}</button>`)
     .join("");
   document.querySelectorAll("#filters button").forEach((btn) =>
     btn.addEventListener("click", () => {
@@ -62,14 +76,14 @@ function renderArticles(data) {
   $("#articles").innerHTML = shown.map((a) => `
     <article class="article-card" style="border-left-color: var(--accent)">
       <div class="cat-row">
-        <span class="badge ${a.category}">${a.category}</span>
-        <span class="stars">${"★".repeat(a.importance || 3)}${"☆".repeat(5 - (a.importance || 3))}</span>
+        <span class="badge ${esc(a.category)}">${esc(a.category)}</span>
+        <span class="stars">${starsOf(a.importance)}</span>
       </div>
-      <h3 class="article-title"><a href="${a.link}" target="_blank" rel="noopener">${a.title}</a></h3>
-      <ul>${(a.summary || []).map((s) => `<li>${s}</li>`).join("")}</ul>
-      ${(a.tags || []).length ? `<div class="tags">${a.tags.map((t) => `<span class="tag">#${t}</span>`).join("")}</div>` : ""}
-      ${a.tech_insight ? `<div class="insight">🛡️ ${a.tech_insight}</div>` : ""}
-      <div class="article-footer"><span>📡 ${a.source || ""}</span><a href="${a.link}" target="_blank" rel="noopener">원문 보기 →</a></div>
+      <h3 class="article-title"><a href="${safeUrl(a.link)}" target="_blank" rel="noopener">${esc(a.title)}</a></h3>
+      <ul>${(a.summary || []).map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
+      ${(a.tags || []).length ? `<div class="tags">${a.tags.map((t) => `<span class="tag">#${esc(t)}</span>`).join("")}</div>` : ""}
+      ${a.tech_insight ? `<div class="insight">🛡️ ${esc(a.tech_insight)}</div>` : ""}
+      <div class="article-footer"><span>📡 ${esc(a.source || "")}</span><a href="${safeUrl(a.link)}" target="_blank" rel="noopener">원문 보기 →</a></div>
     </article>`).join("");
   $("#news-section").classList.remove("hidden");
 }
@@ -80,8 +94,8 @@ function renderTrending(data) {
   $("#trending-list").innerHTML = list.map((r) => `
     <li>
       <div>
-        <a class="repo" href="${r.url}" target="_blank" rel="noopener">${r.repo}</a>
-        ${r.description ? `<span class="desc">${r.description}</span>` : ""}
+        <a class="repo" href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.repo)}</a>
+        ${r.description ? `<span class="desc">${esc(r.description)}</span>` : ""}
       </div>
       <span class="meta">★${fmtNum(r.total_stars)} (+${fmtNum(r.period_stars)})</span>
     </li>`).join("");
@@ -116,10 +130,10 @@ async function init() {
   try {
     const idx = await fetchJson("data/index.json").catch(() => ({ dates: [] }));
     const nav = $("#archive-nav");
-    const dates = (idx.dates || []).slice(0, 14);
+    const dates = idx.dates || [];
     nav.innerHTML =
       `<button data-date="" class="active">최신</button>` +
-      dates.map((d) => `<button data-date="${d}">${d.slice(5)}</button>`).join("");
+      dates.map((d) => `<button data-date="${esc(d)}">${esc(d.slice(5))}</button>`).join("");
     nav.querySelectorAll("button").forEach((b) =>
       b.addEventListener("click", () => loadDate(b.dataset.date))
     );
