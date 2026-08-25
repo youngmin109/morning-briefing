@@ -1,6 +1,6 @@
-# boan-news 🛡️
+# 배타니 모닝 브리핑 🛡️
 
-매일 아침 **KST 08:00**에 GitHub Actions가 자동으로 실행하는 개인 IT·보안 뉴스 브리핑 시스템.
+매일 아침 **KST 07:00**에 GitHub Actions가 자동으로 실행하는 개인 IT·보안 뉴스 브리핑 시스템.
 
 - 📰 **뉴스 수집**: Google News(국내 종합/AI/반도체/보안) + 데일리시큐 + GeekNews + The Hacker News + TechCrunch + Hacker News API
 - 📈 **시장 스냅샷**: 국내 종목(pykrx) · 코스피/코스닥(yfinance) · 해외 주식/환율(yfinance) · 코인(업비트 공개 API)
@@ -59,7 +59,7 @@ python -m src.collectors.news # 수집기만 단독 테스트
 
 ## 배포 파이프라인
 
-1. Actions 크론(UTC 23:00 = KST 08:00) → `python -m src.main`
+1. Actions 크론(UTC 22:00 = KST 07:00) → `python -m src.main`
 2. `data/` 변경분을 저장소에 자동 커밋 (아카이브 축적)
 3. `dashboard/` + `data/`를 GitHub Pages에 배포
 
