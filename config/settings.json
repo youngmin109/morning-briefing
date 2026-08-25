@@ -6,9 +6,11 @@
     "dedup_lookback_days": 7,
     "feeds": [
       { "name": "데일리시큐", "region": "kr", "type": "rss", "url": "https://www.dailysecu.com/rss/allArticle.xml" },
+      { "name": "보안뉴스", "region": "kr", "type": "rss", "url": "https://cdn.boannews.com/rss/gn_rss_allArticle.xml", "per_feed_limit": 8 },
       { "name": "GeekNews", "region": "kr", "type": "rss", "url": "https://news.hada.io/rss" },
       { "name": "IT·테크 (국내 종합)", "region": "kr", "type": "gnews", "query": "IT OR 테크 OR 앱 OR 서비스 출시", "per_feed_limit": 12 },
       { "name": "인공지능", "region": "kr", "type": "gnews", "query": "인공지능 OR AI", "per_feed_limit": 10 },
+      { "name": "AI타임스", "region": "kr", "type": "rss", "url": "https://www.aitimes.com/rss/allArticle.xml", "per_feed_limit": 8 },
       { "name": "반도체", "region": "kr", "type": "gnews", "query": "반도체", "per_feed_limit": 8 },
       { "name": "보안·해킹", "region": "kr", "type": "gnews", "query": "사이버보안 OR 해킹 OR 정보보호", "per_feed_limit": 10 },
       { "name": "The Hacker News", "region": "global", "type": "rss", "url": "https://feeds.feedburner.com/TheHackersNews" },
