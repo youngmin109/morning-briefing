@@ -48,7 +48,7 @@
   "gemini": {
     "model": "gemini-3.6-flash",
     "max_retries": 3,
-    "timeout_seconds": 90
+    "timeout_seconds": 150
   },
   "delivery": {
     "discord_enabled": true,

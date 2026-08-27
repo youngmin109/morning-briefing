@@ -34,9 +34,23 @@ def _market_embed(briefing: dict, market: dict) -> dict | None:
     for name, lines in groups:
         if lines:
             fields.append({"name": name, "value": "\n".join(lines)[:1024], "inline": False})
-    if not fields:
-        return None
     mb = briefing.get("market_briefing") or {}
+    study = mb.get("study_note") or {}
+    if isinstance(study, dict) and study.get("term"):
+        study_lines = []
+        if study.get("simple_explanation"):
+            study_lines.append(f"💡 **개념**: {study['simple_explanation']}")
+        if study.get("market_connection"):
+            study_lines.append(f"🔍 **시장 연결**: {study['market_connection']}")
+        if study.get("action_tip"):
+            study_lines.append(f"📌 **체크포인트**: {study['action_tip']}")
+        if study_lines:
+            fields.append({
+                "name": f"📚 오늘의 주식 1분 과외 — {study.get('term')}",
+                "value": "\n".join(study_lines)[:1024],
+                "inline": False,
+            })
+
     return {
         "title": f"📈 시장 브리핑 — {mb.get('headline', '오늘의 시장')}",
         "description": mb.get("commentary", ""),

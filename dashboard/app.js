@@ -78,7 +78,26 @@ function renderMarket(data) {
     $("#market-briefing").classList.remove("hidden");
     $("#market-briefing").innerHTML =
       `<div class="headline">🧭 ${esc(mb.headline || "")}</div><p>${esc(mb.commentary || "")}</p>`;
+  } else {
+    $("#market-briefing").classList.add("hidden");
   }
+
+  const study = mb.study_note || {};
+  if (study.term && (study.simple_explanation || study.market_connection)) {
+    $("#stock-study").classList.remove("hidden");
+    $("#stock-study").innerHTML = `
+      <div class="study-header">
+        <div class="study-title">📚 오늘의 주식 1분 과외</div>
+        <span class="study-term-badge">${esc(study.term)}</span>
+      </div>
+      <div class="study-desc">${esc(study.simple_explanation || "")}</div>
+      ${study.market_connection ? `<div class="study-connection">🔍 <strong>오늘의 시장 연결:</strong> ${esc(study.market_connection)}</div>` : ""}
+      ${study.action_tip ? `<div class="study-tip">💡 <strong>실전 체크:</strong> ${esc(study.action_tip)}</div>` : ""}
+    `;
+  } else {
+    $("#stock-study").classList.add("hidden");
+  }
+
   $("#market-section").classList.remove("hidden");
 }
 

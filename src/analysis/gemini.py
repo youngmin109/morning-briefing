@@ -32,7 +32,7 @@ def _market_lines(market: dict) -> str:
 
 def build_prompt(news_items: list[dict], market: dict, top_n: int) -> str:
     slim_news = [
-        {"title": n["title"], "link": n["link"], "source": n["source"], "summary": n["summary"]}
+        {"title": n["title"], "link": n["link"], "source": n["source"], "summary": (n.get("summary") or "")[:250]}
         for n in news_items
     ]
     return f"""당신은 최상위 보안 아키텍처이자 IT 기술 교육자이며, 동시에 시장 분석가입니다.
@@ -43,6 +43,11 @@ def build_prompt(news_items: list[dict], market: dict, top_n: int) -> str:
 - headline: 오늘 시장 상태를 한 문장으로 요약 (예: "코스피 상승 마감, AI주 강세 주도")
 - commentary: 전일 대비 변동의 추정 원인과 오늘 확인할 포인트를 2~3문장으로.
   (뉴스 기사 내용과 시세를 연결 지을 수 있으면 연결할 것. 근거가 부족하면 단정하지 말 것.)
+- study_note: 주식을 처음 공부하는 초보자를 위한 오늘의 1분 주식 스터디 노트:
+  - term: 오늘 시장 흐름(환율/금리/반도체/지수 등)과 관련해 초보자가 꼭 알아두면 유익한 핵심 주식·금융 용어
+  - simple_explanation: 주식을 모르는 사람도 단번에 이해할 수 있는 쉬운 일상 비유와 직관적인 설명 (1~2문장)
+  - market_connection: 오늘의 실제 시세/시장 변동에서 이 개념이 어떻게 작동했는지 연결 설명 (1~2문장)
+  - action_tip: 초보 투자자가 실전에서 확인해야 할 핵심 팁이나 체크포인트 (1문장)
 
 ## PART 2 — articles
 수집된 기사 중 엔지니어 관점에서 기술적 가치가 높고 학습에 도움 되는 {top_n}개를 엄선하세요.
@@ -72,7 +77,13 @@ def build_prompt(news_items: list[dict], market: dict, top_n: int) -> str:
 {{
   "market_briefing": {{
     "headline": "...",
-    "commentary": "..."
+    "commentary": "...",
+    "study_note": {{
+      "term": "...",
+      "simple_explanation": "...",
+      "market_connection": "...",
+      "action_tip": "..."
+    }}
   }},
   "articles": [
     {{
@@ -136,8 +147,15 @@ def analyze(news_items: list[dict], market: dict, settings: dict | None = None) 
                 if isinstance(a.get("tags"), str):
                     a["tags"] = [a["tags"]]
                 articles.append(a)
+            if not articles:
+                raise ValueError("Gemini가 기사를 선별하지 못했습니다 (articles 비어있음). 재시도합니다.")
+            mb = result.get("market_briefing") or {}
+            if not isinstance(mb, dict):
+                mb = {}
+            if not isinstance(mb.get("study_note"), dict):
+                mb["study_note"] = {}
             return {
-                "market_briefing": result.get("market_briefing") or {},
+                "market_briefing": mb,
                 "articles": articles,
             }
         except (ServerError, APIError) as e:
