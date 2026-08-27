@@ -101,7 +101,7 @@ def send_briefing(date_str: str, briefing: dict, market: dict, trending: list[di
         header += f"\n> {mb['headline']}"
 
     embeds = []
-    market_e = _market_embed(mb, market)
+    market_e = _market_embed(briefing, market)
     if market_e:
         embeds.append(market_e)
     embeds.extend(_article_embed(a) for a in briefing.get("articles", []))

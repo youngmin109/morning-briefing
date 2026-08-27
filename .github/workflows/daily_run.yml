@@ -3,9 +3,16 @@ name: Daily IT News Automation
 on:
   schedule:
     # GitHub Actions의 cron은 UTC 기준입니다.
-    # 한국 시간(KST) 매일 아침 07:00 실행 = UTC 22:00
-    - cron: '0 22 * * *'
+    # 매일 아침 KST 07:00경 실행 (정각 :00은 GitHub 전역 큐 병목으로 드롭 위험이 크므로 비정각 + 2차 백업 구성)
+    - cron: '7 22 * * *'   # 1차: KST 07:07 (UTC 22:07)
+    - cron: '37 22 * * *'  # 2차 백업: KST 07:37 (UTC 22:37) - 1차 성공 시 당일 중복 실행 방지로 자동 pass
   workflow_dispatch: # Actions 탭에서 수동 실행 버튼 활성화
+    inputs:
+      force:
+        description: '당일 브리핑이 이미 있어도 강제 재실행'
+        required: false
+        type: boolean
+        default: true
 
 concurrency:
   group: daily-news-run
@@ -37,7 +44,12 @@ jobs:
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: python -m src.main
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force }}" != "false" ]; then
+            python -m src.main --force
+          else
+            python -m src.main
+          fi
 
       - name: 수집 데이터 커밋 & 푸시
         run: |

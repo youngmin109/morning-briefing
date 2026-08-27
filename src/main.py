@@ -78,9 +78,26 @@ def save_data(date_str: str, briefing: dict, market: dict, trending: list[dict])
     print(f"  [OK] 데이터 저장: {latest_path.relative_to(PROJECT_ROOT)} + history({len(dates)}일)")
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    import argparse
+    parser = argparse.ArgumentParser(description="boan-news pipeline")
+    parser.add_argument("--force", action="store_true", help="당일 데이터가 이미 존재해도 강제 재실행")
+    args = parser.parse_args(argv)
+
     settings = load_settings()
     date_str = today_str()
+
+    latest_path = PROJECT_ROOT / "data" / "latest.json"
+    if not args.force and latest_path.exists():
+        try:
+            with open(latest_path, encoding="utf-8") as f:
+                latest_data = json.load(f)
+            if latest_data.get("date") == date_str and len(latest_data.get("articles", [])) > 0:
+                print(f"[i] 오늘({date_str}) 브리핑이 이미 완료되었습니다. 중복 실행을 건너뜁니다. (강제 실행: --force)")
+                return 0
+        except Exception:
+            pass
+
     print(f"=== boan-news 파이프라인 시작 ({date_str}) ===")
 
     print("[1/6] 뉴스 수집...")
